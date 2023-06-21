@@ -1,0 +1,14 @@
+{% extends 'project_medis/base.html' %}
+
+{% block content %}
+    <h1>{% block title %} List Data Medis {% endblock %}</h1>
+    <hr>
+    {% for data in medical_data %}
+        <h2> {{ data['Nama'] }} </h2>
+        <h4> Usia : {{ data['Usia'] }} </h4>
+        <p> {{ data['Jenis_Kelamin'] }} </p>
+        <p> Nilai Slope: {{ data['Slope'] }} </p>
+        <p> Nilai Thalach: {{ data['Thalach'] }} </p>
+        <hr>
+    {% endfor %}
+{% endblock %}

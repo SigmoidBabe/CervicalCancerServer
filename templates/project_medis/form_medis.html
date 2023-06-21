@@ -1,0 +1,104 @@
+{% extends 'project_medis/base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Input Data Medis {% endblock %}</h1>
+
+    <form method="POST" action="/">
+        {{ form.csrf_token }}
+        <p>
+            {{ form.Nama.label }}
+            {{ form.Nama(size=20) }}
+        </p>
+
+        {% if form.Nama.errors %}
+            <ul class="errors">
+                {% for error in form.Nama.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.Usia.label }}
+            {{ form.Usia() }}
+        </p>
+
+        {% if form.Usia.errors %}
+            <ul class="errors">
+                {% for error in form.Usia.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.Jenis_Kelamin.label }}
+            {{ form.Jenis_Kelamin() }}
+        </p>
+
+        {% if form.Jenis_Kelamin.errors %}
+            <ul class="errors">
+                {% for error in form.Jenis_Kelamin.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.RestECG.label }}
+            {{ form.RestECG() }}
+        </p>
+
+        {% if form.RestECG.errors %}
+            <ul class="errors">
+                {% for error in form.RestECG.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.Slope.label }}
+            {{ form.Slope() }}
+        </p>
+
+        {% if form.Slope.errors %}
+            <ul class="errors">
+                {% for error in form.Slope.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.Chol.label }}
+            {{ form.Chol() }}
+        </p>
+
+        {% if form.Chol.errors %}
+            <ul class="errors">
+                {% for error in form.Chol.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.Thalach.label }}
+            {{ form.Thalach() }}
+        </p>
+
+        {% if form.Thalach.errors %}
+            <ul class="errors">
+                {% for error in form.Thalach.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            <input type="submit" value="Add">
+        </p>
+    </form>
+
+{% endblock %}
